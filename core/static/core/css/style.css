@@ -144,3 +144,30 @@ span{
 .link_git:hover i{
     color: darkcyan;
 }
+
+/*Estilos CONTACTO*/
+
+#titulo__contacto{
+    text-align: center;
+    font-size: 45px;
+    border-bottom: 2px dotted #000;
+}
+
+.contenedor_contacto{
+    padding-top: 17px;
+}
+
+.link__contacto{
+    color: black;
+    float: left;
+    font-family: serif;
+    font-size: 22px;
+    margin-left: 23px;
+    margin-right: 10px;
+}
+
+#map{
+    width: 100%;
+    height: 250px;
+}
+

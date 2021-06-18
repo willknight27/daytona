@@ -86,23 +86,30 @@
 {% endblock %}
 
 {% block footer %}
-<div class="contenido_footer">
-    <h3>DAYTONA</h3>
-    <p>Estamos orientados en brindar la mejor atención y servicio en la mantención de su vehículo, dándole un valor agregado y ofreciéndole la seguridad que su inversión siempre estará en buenas manos.</p>
-    <ul class="redes_sociales">
-      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-      <li><a href="#"><i class="fab fa-youtube"></i></a></li>
-      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-    </ul>
-    <div class="footer-indicador mx-auto text-centerd">
-      <p>Indicadores Económicos</p>
-      <p>UF: $ <span id="valor-uf"></span> - DOLAR: $ <span id="valor-dolar"></span> - UTM: $ <span id="valor-utm"></span></p>
+<footer>
+    <div class="contenido_footer">
+        <h3>DAYTONA</h3>
+        <p>Estamos orientados en brindar la mejor atención y servicio en la mantención de su vehículo, dándole un valor
+            agregado y ofreciéndole la seguridad que su inversión siempre estará en buenas manos.</p>
+        <ul class="redes_sociales">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <div class="footer-indicador mx-auto text-centerd">
+            <p>Indicadores Económicos</p>
+            <p>UF: $ <span id="valor-uf"></span> - DOLAR: $ <span id="valor-dolar"></span> - UTM: $ <span
+                    id="valor-utm"></span></p>
+        </div>
+        <p class="footer_info"><span> Diseño página web: Albania Musabeli </span><a class="link_git" target="_blank"
+                href="https://github.com/AlbaniaMusabeli"><i class="fab fa-github"></i></a><span> - Williams Caballero
+            </span><a target="_blank" class="link_git" href="https://github.com/willknight2"><i
+                    class="fab fa-github"></i></a></p>
     </div>
-    <p class="footer_info"><span> Diseño página web: Albania Musabeli </span><a class="link_git" target="_blank" href="https://github.com/AlbaniaMusabeli"><i class="fab fa-github"></i></a><span> - Williams Caballero </span><a target="_blank" class="link_git" href="https://github.com/willknight2"><i class="fab fa-github"></i></a></p>
-  </div>
+</footer>
+{% endblock  %}
 
-{% endblock%}
 
 {% block js %}
 <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
