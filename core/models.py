@@ -28,7 +28,7 @@ class Vehiculo(models.Model):
 
 
 class Trabajo(models.Model):
-    id_trabajo = models.IntegerField(primary_key=True)
+    id_trabajo = models.AutoField(primary_key=True)
     diagnostico = models.TextField()
     valor = models.IntegerField()
     fecha = models.DateField()
