@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from .models import Trabajo
-
+from .forms import TrabajoForm
 
 #VISTAS
 
@@ -16,3 +16,11 @@ def trabajos(request):
         'trabajos' : trabajos
     }
     return render(request,'core/trabajos.html',data)
+
+def agregar_trabajo(request):
+
+    data = {
+        'form': TrabajoForm()
+    }
+
+    return render(request,'core/lista_trabajos/agregar.html',data)
