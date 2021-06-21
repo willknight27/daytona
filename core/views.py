@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from importlib.metadata import files
+from django.shortcuts import render,redirect,get_object_or_404
 from .models import Trabajo
 from .forms import TrabajoForm,VehiculoForm
 
@@ -56,3 +57,27 @@ def listar_trabajos(request):
 
     return render(request, 'core/lista_trabajos/listar.html',data)
 
+def modificar_trabajos(request, id):
+
+    trabajo = get_object_or_404(Trabajo, id_trabajo = id )
+
+    data = {
+        'form': TrabajoForm(instance=trabajo)
+
+    }
+
+    if request.method == 'POST':
+        formulario = TrabajoForm(data=request.POST, instance=trabajo, files=request.FILES)
+        if formulario.is_valid():
+            formulario.save()
+            return redirect(to='listar-trabajos')
+        data["form"] = formulario
+
+    return render(request, 'core/lista_trabajos/modificar.html',data)
+    
+
+def eliminar_trabajos(request, id):
+    
+    trabajo = get_object_or_404(Trabajo, id_trabajo = id)
+    trabajo.delete()
+    return redirect(to='listar-trabajos')

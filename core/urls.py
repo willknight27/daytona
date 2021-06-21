@@ -1,6 +1,6 @@
 from unicodedata import name
 from django.urls import path
-from .views import home,contacto, listar_trabajos,trabajos,agregar_trabajo
+from .views import eliminar_trabajos, home,contacto, listar_trabajos,trabajos,agregar_trabajo,modificar_trabajos
 
 
 urlpatterns = [
@@ -9,4 +9,6 @@ urlpatterns = [
     path('trabajos/',trabajos,name="trabajos"),
     path('agregar-trabajo/',agregar_trabajo,name="agregar-trabajo"),
     path('listar-trabajos/',listar_trabajos,name="listar-trabajos"),
+    path('modificar-trabajos/<id>/',modificar_trabajos,name='modificar-trabajos'),
+    path('eliminar-producto/<id>/',eliminar_trabajos,name='eliminar-trabajos'),
 ]
