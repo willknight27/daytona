@@ -28,6 +28,12 @@
     font-size: 20px;
 }
 
+/*
+.login_daytona{
+    margin-left: 300px !important;
+}
+*/
+
 /*Estilo SERVICIOS*/
 body{
     background-color: var(--color_fondo) ;

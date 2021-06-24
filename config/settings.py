@@ -30,6 +30,9 @@ ALLOWED_HOSTS = []
 # MESSAGE_STORAGE: Para enviar mensajes entre distintas ventanas
 MESSAGE_STORAGE = "django.contrib.messages.storage.cookie.CookieStorage"
 
+# REDIRECCION LOGIN
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 # Application definition
 
