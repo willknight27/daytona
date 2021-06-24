@@ -2,6 +2,7 @@ from importlib.metadata import files
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import Trabajo
 from .forms import TrabajoForm,VehiculoForm
+from django.contrib import messages
 
 #VISTAS
 
@@ -70,14 +71,16 @@ def modificar_trabajos(request, id):
         formulario = TrabajoForm(data=request.POST, instance=trabajo, files=request.FILES)
         if formulario.is_valid():
             formulario.save()
+            messages.success(request,"Modificado correctamente")
             return redirect(to='listar-trabajos')
         data["form"] = formulario
 
     return render(request, 'core/lista_trabajos/modificar.html',data)
-    
+   
 
 def eliminar_trabajos(request, id):
     
     trabajo = get_object_or_404(Trabajo, id_trabajo = id)
     trabajo.delete()
+    messages.success(request,"Eliminado correctamente")
     return redirect(to='listar-trabajos')

@@ -31,8 +31,10 @@
                     <td>${{i.valor | intcomma }}</td>
                     <td>{{i.fecha}}</td>
                     <td>{{i.mecanico.nombre_mecanico}}</td>
-                    <td><a class="btn btn-info btn-sm" href="{% url 'modificar-trabajos' i.id_trabajo %}">modificar</a>
-                        <a class="btn btn-danger btn-sm" href="{% url 'eliminar-trabajos' i.id_trabajo %}">eliminar</a></td>
+                    <td>
+                        <a class="btn btn-info btn-sm" href="{% url 'modificar-trabajos' i.id_trabajo %}">modificar</a>
+                        <a onclick="eliminar_trabajo({{i.id_trabajo}})" class="btn btn-danger btn-sm" href="#">eliminar</a>
+                    </td>
                     
                     
             
@@ -45,8 +47,8 @@
         </div>
     </div>
 </div>
+{% endblock  %}
 
-
-
-
+{% block js %}
+<script src="{% static 'core/js/confirmar_eliminar.js' %}"></script>
 {% endblock  %}

@@ -10,5 +10,5 @@ urlpatterns = [
     path('agregar-trabajo/',agregar_trabajo,name="agregar-trabajo"),
     path('listar-trabajos/',listar_trabajos,name="listar-trabajos"),
     path('modificar-trabajos/<id>/',modificar_trabajos,name='modificar-trabajos'),
-    path('eliminar-producto/<id>/',eliminar_trabajos,name='eliminar-trabajos'),
+    path('eliminar-trabajos/<id>/',eliminar_trabajos,name='eliminar-trabajos'),
 ]
