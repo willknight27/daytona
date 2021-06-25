@@ -48,11 +48,13 @@ INSTALLED_APPS = [
     'colorfield',
     'django.contrib.humanize',
     "crispy_forms",
+    "crispy_bootstrap5",
 
 ]
 
 
-CRISPY_TEMPLATE_PACK = "bootstrap4"
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = "bootstrap5"
 
 X_FRAME_OPTIONS='SAMEORIGIN'
 
