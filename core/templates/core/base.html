@@ -37,18 +37,24 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
                         <a class="nav-link" href="{% url 'contacto' %}">Contacto</a>
                         <a class="nav-link" href="{% url 'trabajos' %}">Trabajos</a>
-                        <a class="nav-link ms-4" href="{% url 'agregar-trabajo' %}">Agregar Trabajos</a>
-                        <a class="nav-link" href="{% url 'listar-trabajos' %}">Listar Trabajos</a>
+                    </div>
+                    <div class = "navbar-nav ms-auto">
+                        {% if perms.core.add_trabajo %}
+                            <a class="nav-link ms-5" href="{% url 'agregar-trabajo' %}">Agregar Trabajos</a>
+                        {% endif %}
+
+                        {% if perms.core.view_trabajo %}
+                            <a class="nav-link" href="{% url 'listar-trabajos' %}">Listar Trabajos</a>
+                        {% endif %}
 
                         {% if user.is_authenticated %}
-                            <a class="login_daytona nav-link ms-5" href="{% url 'logout' %}"><span><i class="login_icono fas fa-user-times"></i></span> Cerrar Sesión</a>
-                            <a class="nav-link ms-2" href="#"><span><i class="login_icono fas fa-user"></i></span> {{user.username}}</a>
+                            <a class="login_daytona nav-link" href="{% url 'logout' %}"><span><i class="login_icono fas fa-user-times"></i></span> Cerrar Sesión</a>
+                            <a class="nav-link" href="#"><span><i class="login_icono fas fa-user"></i></span> {{user.username}}</a>
                             
                         {% else %}
-                            <a class="login_daytona nav-link ms-5" href="{% url 'login' %}"><span><i class="login_icono fas fa-user"></i></span> Iniciar Sesión</a>
+                            <a class="login_daytona nav-link " href="{% url 'login' %}"><span><i class="login_icono fas fa-user"></i></span> Iniciar Sesión</a>
+                            <a class="login_daytona nav-link " href="{% url 'registro' %}"><span><i class="fas fa-user-plus"></i></span> Registro</a>
                         {% endif %}
-                        
-                        
                     </div>
                 </div>
             </div>

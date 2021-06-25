@@ -32,8 +32,13 @@
                     <td>{{i.fecha}}</td>
                     <td>{{i.mecanico.nombre_mecanico}}</td>
                     <td>
-                        <a class="btn btn-info btn-sm" href="{% url 'modificar-trabajos' i.id_trabajo %}">modificar</a>
-                        <a onclick="eliminar_trabajo({{i.id_trabajo}})" class="btn btn-danger btn-sm" href="#">eliminar</a>
+                        {% if perms.core.change_trabajo %}
+                            <a class="btn btn-info btn-sm" href="{% url 'modificar-trabajos' i.id_trabajo %}">modificar</a>
+                        {% endif %}
+                        
+                        {% if perms.core.delete_trabajo %}
+                            <a onclick="eliminar_trabajo({{i.id_trabajo}})" class="btn btn-danger btn-sm" href="#">eliminar</a>
+                        {% endif %}
                     </td>
                     
                     
