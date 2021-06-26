@@ -29,7 +29,7 @@ class Vehiculo(models.Model):
 
 class Trabajo(models.Model):
     id_trabajo = models.AutoField(primary_key=True)
-    diagnostico = models.TextField()
+    diagnostico = models.CharField(max_length=100)
     valor = models.IntegerField()
     fecha = models.DateField()
     categoria = models.ForeignKey(Categoria, on_delete = models.PROTECT)

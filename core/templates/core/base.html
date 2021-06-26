@@ -39,8 +39,11 @@
                         <a class="nav-link" href="{% url 'trabajos' %}">Trabajos</a>
                     </div>
                     <div class = "navbar-nav ms-auto">
+                            {% if perms.core.add_vehiculo %}
+                            <a class="nav-link" href="{% url 'agregar-vehiculo' %}">Agregar Vehículo</a>
+                            {% endif %}
                         {% if perms.core.add_trabajo %}
-                            <a class="nav-link ms-5" href="{% url 'agregar-trabajo' %}">Agregar Trabajos</a>
+                            <a class="nav-link" href="{% url 'agregar-trabajo' %}">Agregar Trabajos</a>
                         {% endif %}
 
                         {% if perms.core.view_trabajo %}
