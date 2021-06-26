@@ -29,31 +29,39 @@ def trabajos(request):
 def agregar_trabajo(request):
 
     data = {
-        'form': TrabajoForm(),
-        'form_vehiculo': VehiculoForm(),
+        'form': TrabajoForm()
     }
-
 
 
     if request.method == 'POST':
         formulario = TrabajoForm(data = request.POST,files = request.FILES)
         if formulario.is_valid():
             formulario.save()
-            data["mensaje"] = "guardado exitoso"
+            messages.success(request,"Trabajo Agregado")
+            return redirect(to='listar-trabajos')
         else:
             data["form"] = formulario
-    
+
+    return render(request,'core/lista_trabajos/agregar.html',data)
+
+@permission_required('core.add_vehiculo')
+def agregar_vehiculo(request):
+
+    data = {
+        'form': VehiculoForm()
+    }
 
 
     if request.method == 'POST':
-        formulario_vehiculo = VehiculoForm(data = request.POST)
-        if formulario_vehiculo.is_valid():
-            formulario_vehiculo.save()
-            data["mensaje"] = "guardado exitoso"
+        formulario = VehiculoForm(data = request.POST)
+        if formulario.is_valid():
+            formulario.save()
+            messages.success(request,"Vehiculo Agregado")
+            return redirect(to='home')
         else:
-            data["from_vehiculo"] = formulario_vehiculo
+            data["form"] = formulario
 
-    return render(request,'core/lista_trabajos/agregar.html',data)
+    return render(request,'core/lista_trabajos/agregar_vehiculo.html',data)
 
 @permission_required('core.view_trabajo')
 def listar_trabajos(request):
