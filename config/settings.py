@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'core',
     'rest_trabajo',
+    'rest_framework.authtoken',
     'colorfield',
     'django.contrib.humanize',
     "crispy_forms",
@@ -87,6 +88,13 @@ TEMPLATES = [
         },
     },
 ]
+
+REST_FRAMEWORK = {
+
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}
 
 WSGI_APPLICATION = 'config.wsgi.application'
 
