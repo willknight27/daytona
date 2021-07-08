@@ -33,7 +33,6 @@ def agregar_trabajo(request):
     }
 
 
-
     if request.method == 'POST':
         formulario = TrabajoForm(data = request.POST,files = request.FILES)
         if formulario.is_valid():
