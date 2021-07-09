@@ -17,11 +17,17 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework import urls,routers
+from rest_trabajo.views import TrabajoAPI
+
+apiurl = routers.SimpleRouter()
+apiurl.register('trabajos',TrabajoAPI)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('core.urls')),
     path('accounts/',include('django.contrib.auth.urls')),
+    path('api/',include(apiurl.urls)),
 ]
 
 if settings.DEBUG:
