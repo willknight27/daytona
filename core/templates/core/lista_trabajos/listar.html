@@ -1,0 +1,59 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block contenido %}
+{% load humanize %}
+
+<div class="container mt-2">
+    <h2 id="titulo__contacto">Listar Trabajos</h2>
+    <br>
+</div>
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <table class="table table-striped table-hover table-responsive-sm">
+                <tr>
+                    <th>Categoría</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Valor</th>
+                    <th>Fecha</th>
+                    <th>Mecánico</th>
+                    <th>Opciones</th>
+                </tr>
+            
+                {% for i in trabajos %}
+            
+                <tr>
+                    <td>{{i.categoria.nombre_categoria}}</td>
+                    <td>{{i.vehiculo.marca}}</td>
+                    <td>{{i.vehiculo.modelo}}</td>
+                    <td>${{i.valor | intcomma }}</td>
+                    <td>{{i.fecha}}</td>
+                    <td>{{i.mecanico.nombre_mecanico}}</td>
+                    <td>
+                        {% if perms.core.change_trabajo %}
+                            <a class="btn btn-info btn-sm" href="{% url 'modificar-trabajos' i.id_trabajo %}">modificar</a>
+                        {% endif %}
+                        
+                        {% if perms.core.delete_trabajo %}
+                            <a onclick="eliminar_trabajo({{i.id_trabajo}})" class="btn btn-danger btn-sm" href="#">eliminar</a>
+                        {% endif %}
+                    </td>
+                    
+                    
+            
+                </tr>
+            
+                {% endfor %}
+            
+            </table>
+    
+        </div>
+    </div>
+</div>
+{% endblock  %}
+
+{% block js %}
+<script src="{% static 'core/js/confirmar_eliminar.js' %}"></script>
+{% endblock  %}

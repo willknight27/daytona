@@ -1,0 +1,179 @@
+:root{
+    font-family:'Roboto' !important;
+    --color_fondo: #DFEEEA;
+
+}
+
+
+/*Estilos NAVBAR*/
+.navbar{
+    background-color: black !important;
+}
+
+.nav-link{
+
+    color: darkcyan;
+    font-weight: bold ;
+}
+
+.logo-navbar{
+
+    width: 160px;
+    height: auto;
+}
+
+#titulo_navbar{
+    font-family: 'Orbitron';
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/*
+.login_daytona{
+    margin-left: 300px !important;
+}
+*/
+
+/*Estilo SERVICIOS*/
+body{
+    background-color: var(--color_fondo) ;
+}
+#servicios{
+    
+    padding: 0;
+    margin: 0;
+}
+.div_servicio{
+
+  height: 100px;
+  width: 100px;
+  background-color: darkcyan;
+  border-radius: 50%;
+  display: inline-block;
+  
+}
+.servicios_img{
+    color: white;
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+/* Estilos FOOTER*/
+footer{
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    padding-top: 40px;
+    color: white;
+    
+}
+
+.contenido_footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.contenido_footer h3{
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-transform: capitalize;
+    line-height: 3rem;
+    margin-bottom: 0;
+
+}
+
+.contenido_footer p{
+    max-width: 500px;
+    margin: 10px auto;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+.redes_sociales {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0 3rem 0;
+}
+
+.redes_sociales li {
+ 
+    margin:0 10px;
+}
+
+.redes_sociales a {
+ 
+    text-decoration: none;
+    color: white;
+    
+}
+
+.redes_sociales a i{
+ 
+    font-size: 1.5rem;
+    transition: color .4s ease;
+}
+
+.redes_sociales a:hover i{
+    color: darkcyan;
+}
+
+.footer-indicador{
+    padding: 0;
+    text-align: center;
+}
+
+.footer-indicador p{
+    font-size: 16px;
+}
+
+
+.footer_info a{
+
+    font-size: 20px;
+}
+
+span{
+    font-size: 1rem;
+    
+}
+
+.link_git i{
+    color: white;
+    font-size: 1.5rem;
+    transition: color .4s ease;
+}
+
+.link_git:hover i{
+    color: darkcyan;
+}
+
+/*Estilos CONTACTO*/
+
+#titulo__contacto{
+    text-align: center;
+    font-size: 45px;
+    border-bottom: 2px dotted #000;
+}
+
+.contenedor_contacto{
+    padding-top: 17px;
+}
+
+.link__contacto{
+    color: black;
+    float: left;
+    font-family: serif;
+    font-size: 22px;
+    margin-left: 23px;
+    margin-right: 10px;
+}
+
+#map{
+    width: 100%;
+    height: 250px;
+}
+

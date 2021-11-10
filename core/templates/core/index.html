@@ -1,0 +1,117 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="#"><img src="{% static 'core/img/auto1_carrusel.jpeg' %}" class="d-block w-100" alt="..."></a>
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Detalles de nuestros servicios</h3>
+                <p>Haz click en las imagenes para ver los detalles.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <a href="#"><img src="{% static 'core/img/auto2_carrusel.jpg' %}" class="d-block w-100" alt="..."></a>
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Detalles de nuestros servicios</h3>
+                <p>Haz click en las imagenes para ver los detalles.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <a href="#"><img src="{% static 'core/img/auto3_carrusel.jpg' %}" class="d-block w-100" alt="..."></a>
+            <div class="carousel-caption d-none d-md-block">
+                <h3>Detalles de nuestros servicios</h3>
+                <p>Haz click en las imagenes para ver los detalles.</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+</div>
+
+<div class="mt-4">
+    <h3 class="text-center ">Bienvenido a Daytona</h3>
+    <h4 class="text-center ">Estos son algunos de nuestros servicios</h4>
+</div>
+
+<div class="container">
+    <div class="row mt-5 border-bottom border-info div_servicios">
+
+        <div class="col-lg-3 col-md-12 text-center ">
+            <div class="div_servicio">
+                <i class=" servicios_img fas fa-wrench"></i>
+            </div>
+            <h4 class="mt-3">Ajustes de Motor</h4>
+        </div>
+        <div class="col-lg-3 col-sm-12 text-center ">
+            <div class="div_servicio">
+                <i class=" servicios_img fas fa-car"></i>
+            </div>
+            <h4 class="mt-3">Reparaciones a domicilio</h4>
+        </div>
+        <div class="col-lg-3 col-sm-12 text-center ">
+            <div class="div_servicio">
+                <i class=" servicios_img fas fa-car-battery"></i>
+            </div>
+            <h4 class="mt-3">Mantención</h4>
+        </div>
+
+        <div class="col-lg-3 col-sm-12 4 text-center ">
+            <div class="div_servicio">
+                <i class=" servicios_img fas fa-bolt"></i>
+            </div>
+            <h4 class="mt-3">Electricidad</h4>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}
+<footer>
+    <div class="contenido_footer">
+        <h3>DAYTONA</h3>
+        <p>Estamos orientados en brindar la mejor atención y servicio en la mantención de su vehículo, dándole un valor
+            agregado y ofreciéndole la seguridad que su inversión siempre estará en buenas manos.</p>
+        <ul class="redes_sociales">
+            <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+        </ul>
+        <div class="footer-indicador mx-auto text-centerd">
+            <p>Indicadores Económicos</p>
+            <p>UF: $ <span id="valor-uf"></span> - DOLAR: $ <span id="valor-dolar"></span> - UTM: $ <span
+                    id="valor-utm"></span></p>
+        </div>
+        <p class="footer_info"><span> Diseño página web: Albania Musabeli </span><a class="link_git" target="_blank"
+                href="https://github.com/AlbaniaMusabeli"><i class="fab fa-github"></i></a><span> - Williams Caballero
+            </span><a target="_blank" class="link_git" href="https://github.com/willknight2"><i
+                    class="fab fa-github"></i></a></p>
+    </div>
+</footer>
+{% endblock  %}
+
+
+{% block js %}
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="{% static 'core/js/indicadores.js' %}"></script>
+{% endblock%}

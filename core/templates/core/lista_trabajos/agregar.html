@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+
+{% block contenido %}
+{% load crispy_forms_tags %}
+<div class="container mt-2">
+    <h2 id="titulo__contacto">Agregar Trabajos</h2>
+    <br>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-8 col-lg-6 mx-auto">
+            <div class="card">
+                <div class="card-header bg-info text-dark text-center">
+                    <span>Agregar Trabajo</span>
+                </div>
+                <div class="card-body">
+                    <form action="" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{ form | crispy }}
+                        <div class="d-flex justify-content-center mt-2">
+                            <input class="btn btn-secondary" type="reset" value="Cancelar">
+                            &nbsp;
+                            <input class="btn btn-info" type="submit" value="Guardar">
+                        </div>
+                    </form>
+                    {{mensaje}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        &nbsp;
+    </div>
+</div>
+
+
+
+{% endblock  %}

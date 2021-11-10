@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load humanize %}
+
+{% block contenido %}
+<div class="container mt-2">
+    <h2 id="titulo__contacto">Trabajos Realizados</h2>
+    <br>
+</div>
+<div class="container mx-auto">
+    <div class="row mt-3">
+        {% for i in trabajos %}
+        <div class="col-lg-3 col-md-6">
+    
+            
+            
+            <div class="card">
+                <div class="card-header bg-info text-light text-center ">
+                    <span>{{ i.categoria.nombre_categoria }}</span>
+                </div>
+
+                <div class="card-body">
+                    {% if i.imagen %}
+                    <img class="img-fluid" src="{{ i.imagen.url }}" alt="imagen_auto">
+                    {% endif %}
+                    <div class="detalle_trabajo mt-2">
+                        <span>Diagnostico: {{ i.diagnostico }}</span><br>
+                        <span>Valor: ${{ i.valor | intcomma }}</span><br>
+                        <span>Fecha: {{ i.fecha }}</span><br>
+                        <span>Mecánico: {{ i.mecanico.nombre_mecanico }}</span>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+{% endblock  %}

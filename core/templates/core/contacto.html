@@ -1,0 +1,79 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block contenido %}
+<div class="contenedor_contacto container">
+    <h2 id="titulo__contacto">Contáctanos</h2>
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+
+            <form id="formulario-contacto">
+
+                <div class="mb-2 has-validation">
+                    <!--Correo-->
+                    <label class="form-label" for="nombre-txt">Nombre</label>
+                    <input class="form-control" id="nombre-txt" type="text">
+                    <div class="invalid-feedback">
+                        Por favor ingrese su nombre.
+                    </div>
+                </div>
+
+                <div class="mb-2 has-validation">
+                    <!--Correo-->
+                    <label class="form-label" for="correo-txt">Correo</label>
+                    <input class="form-control" id="correo-txt" type="email">
+                    <div class="invalid-feedback">
+                        Por favor ingrese su correo.
+                    </div>
+                </div>
+
+                <div class="mb-2">
+                    <label for="mensaje-txt" class="form-label">Mensaje</label>
+                    <textarea class="form-control" id="mensaje-txt" placeholder=""></textarea>
+                    <div class="invalid-feedback">
+                        Por favor escriba su mensaje y lo contactaremos.
+                    </div>
+                </div>
+
+
+                <div class="mt-4">
+                    <button class="btn btn-success" type="submit">Enviar</button>
+                </div>
+
+            </form>
+        </div>
+
+        <div class="col-md-1"></div>
+
+        <div class="col-md-5 mb-4">
+            <div id="map"></div>
+            <br>
+            <p><i class="fa fa-map-marker"></i> Libertad 123, Viña de Mar</p>
+            <p><i class="fa fa-phone"></i> +56 32 247856310</p>
+            <p><i class="fa fa-envelope"></i> daytona@automotriz.cl</p>
+
+            <hr>
+
+            <div class="media">
+                <ul class="list-unstyled">
+                    <li><a class="link__contacto" href=""><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a class="link__contacto" href=""><i class="fab fa-instagram"></i></a></li>
+                    <li><a class="link__contacto" href=""><i class="fab fa-twitter"></i></a></li>
+                    <li><a class="link__contacto" href=""><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+{% block js %}
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script src="{% static 'core/js/google_maps.js' %}"></script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
+{% endblock%}
